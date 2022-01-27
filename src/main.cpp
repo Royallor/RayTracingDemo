@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/vec3.h"
+#include "vec3.h"
 int main() {
     const int image_width = 200;
     const int image_height = 100;
