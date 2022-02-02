@@ -7,4 +7,4 @@ include_directories(include)
 
 add_executable(RayTracingDemo
         include/vec3.h
-        src/main.cpp include/Ray.h)
+        src/main.cpp include/ray.h include/color.h)

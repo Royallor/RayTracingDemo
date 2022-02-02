@@ -1,3 +1,6 @@
+#ifndef RAYTRACINGDEMO_VEC3_H
+#define RAYTRACINGDEMO_VEC3_H
+
 #include <iostream>
 #include <cmath>
 
@@ -45,16 +48,14 @@ public:
         return e[0] * e[0] + e[1] * e[1] + e[2] * e[2];
     }
 
-    void write_color(std::ostream &out) {
-        // write the translated [0,255] value of each color component.
-        out << static_cast<int>(255.999 * e[0]) << ' '
-            << static_cast<int>(255.999 * e[1]) << ' '
-            << static_cast<int>(255.999 * e[2]) << '\n';
-    }
 
 public:
     double e[3];
 };
+
+// Type alias for vec3
+using point3 = vec3; // 3D point
+using color = vec3;  // RGB color
 
 //vec3 Utility Functions
 inline std::ostream &operator<<(std::ostream &out, const vec3 &v) {
@@ -74,7 +75,7 @@ inline vec3 operator*(const vec3 &u, const vec3 &v) {
 }
 
 inline vec3 operator*(double t, const vec3 &u) {
-    return {u.e[0] * t, u.e[1] * t, u.e[2] * t};
+    return {t * u.e[0], t * u.e[1], t * u.e[2]};
 }
 
 inline vec3 operator*(const vec3 &u, double t) {
@@ -105,6 +106,8 @@ inline vec3 cross(const vec3 &u, const vec3 &v) {
 }
 
 //单位化
-inline vec3 unit_vector(vec3 v){
-    return v/v.length();
+inline vec3 unit_vector(vec3 v) {
+    return v / v.length();
 }
+
+#endif
