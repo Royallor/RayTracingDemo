@@ -1,3 +1,3 @@
 import os
 
-os.system('../cmake-build-debug/RayTracingDemo > ../output/image.ppm')
+os.system('./build/RayTracingDemo > ./output/image.ppm')
