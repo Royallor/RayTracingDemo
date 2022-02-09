@@ -7,7 +7,8 @@
 
 #include "vec3.h"
 
-class ray {
+class ray
+{
 public:
     ray() {}
 
@@ -17,12 +18,13 @@ public:
 
     vec3 direction() const { return dir; }
 
-    point3 at(double t) const {
+    point3 at(double t) const
+    {
         return orig + t * dir;
     }
 
 public:
-    vec3 orig;
+    point3 orig;
     vec3 dir;
 };
 
